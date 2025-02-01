@@ -1,0 +1,2 @@
+@id("")
+permit(principal is gatewayDemo::Workload, action in gatewayDemo::Action::"GET", resource is gatewayDemo::HTTP_Request) when { ((principal has "access_token") && ((principal["access_token"]) has "scope")) && (((principal["access_token"])["scope"]).contains("profile")) };
